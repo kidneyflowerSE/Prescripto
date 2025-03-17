@@ -35,19 +35,34 @@ const addDoctor = async (req, res) => {
     );
 
     // checking for all data to add dotor
-    if (
-      !name ||
-      !email ||
-      !password ||
-      !speciality ||
-      !degree ||
-      !experience ||
-      !about ||
-      !fees ||
-      !address
-    ) {
-      return res.json({ success: false, message: "Missing Data" });
+    if (!name) {
+      return res.json({ success: false, message: "Missing Name" });
     }
+    if (!email) {
+      return res.json({ success: false, message: "Missing Email" });
+    }
+    if (!password) {
+      return res.json({ success: false, message: "Missing Password" });
+    }
+    if (!speciality) {
+      return res.json({ success: false, message: "Missing Speciality" });
+    }
+    if (!degree) {
+      return res.json({ success: false, message: "Missing Degree" });
+    }
+    if (!experience) {
+      return res.json({ success: false, message: "Missing Experience" });
+    }
+    if (!about) {
+      return res.json({ success: false, message: "Missing About" });
+    }
+    if (!fees) {
+      return res.json({ success: false, message: "Missing Fees" });
+    }
+    if (!address) {
+      return res.json({ success: false, message: "Missing Address" });
+    }
+    
 
     // validating email format
     if (!validator.isEmail(email)) {
